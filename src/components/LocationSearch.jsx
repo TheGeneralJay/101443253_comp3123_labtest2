@@ -13,13 +13,21 @@ const LocationSearch = () => {
     const [forecast, setForecast] = useState("");
 
     const getForecast = () => { 
-        axios.get(`${API_URL.BASEURL}/forecast.json?${API_URL.APIKEY}&q=${city},${country}&days=3`)
+        axios.get(`${API_URL.BASEURL}/forecast.json?${API_URL.APIKEY}&q=${city},${country}&days=3`, {
+            validateStatus: function (status) {
+                return status < 500;
+            }
+        })
         .then(res => {
-            return setForecast(res.data.forecast.forecastday);
+            if (res.status !== 400) {
+                setCurrentCity(city);
+                setCurrentCountry(country);
+                return setForecast(res.data.forecast.forecastday);
+            } else {
+                alert("Please make sure the city and country you wish to view were spelled correctly.");
+            }
         })
 
-        setCurrentCity(city);
-        setCurrentCountry(country);
     }
 
     const handleSubmit = (e) => {
