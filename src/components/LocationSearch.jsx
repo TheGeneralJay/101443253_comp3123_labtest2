@@ -12,6 +12,8 @@ const LocationSearch = () => {
     const [currentCountry, setCurrentCountry] = useState("");
     const [forecast, setForecast] = useState("");
 
+    // Get forecast from the API. If it returns 400 due to an invalid city/country, alert user instead of
+    // changing values.
     const getForecast = () => { 
         axios.get(`${API_URL.BASEURL}/forecast.json?${API_URL.APIKEY}&q=${city},${country}&days=3`, {
             validateStatus: function (status) {

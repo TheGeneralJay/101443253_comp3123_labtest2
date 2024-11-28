@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 
+// Card that shows the 3-day forecast.
 const ForecastCard = (props) => {
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
@@ -19,6 +20,7 @@ const ForecastCard = (props) => {
         setForecast(props.forecast);
     }
 
+    // If the forecast is still blank, do not show anything.
     if (forecast !== "") {
         return (
             <Container className="card-container">
