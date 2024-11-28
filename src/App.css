@@ -1,5 +1,10 @@
+html, body {
+  background-color: #B6C2D9 !important;
+}
+
 .App {
   text-align: center;
+  margin: auto;
 }
 
 .App-logo {
@@ -35,4 +40,65 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.temp {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.astro-txt, .weather-desc {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.forecast-card {
+  padding: 5px;
+  margin: 5px;
+  border: 5px solid #B6C2D9;
+}
+
+.card-container {
+  width: 60% !important;
+  border: 2px solid #B6C2D9;
+  background-color: #272932;
+  padding: 5px;
+}
+
+.forecast-card {
+  background-color: #6693ba;
+}
+
+.city-hdr {
+  background-color: #272932;
+}
+
+.city-name {
+  color: white;
+  padding: 10px;
+}
+
+Form {
+  width: 60%;
+  padding: 10px;
+  color: white;
+  background-color: #272932;
+  margin: auto;
+}
+
+.application {
+  margin-top: 20px;
+}
+
+.label {
+  font-size: 25px;
+}
+
+.submit-btn {
+  background-color: #4D7EA8 !important;
+  border: #272932 !important;
+}
+
+.submit-btn:hover {
+  background-color: #555b70 !important;
 }
